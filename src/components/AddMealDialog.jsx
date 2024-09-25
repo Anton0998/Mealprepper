@@ -6,6 +6,8 @@ export default function AddMealDialog() {
   const [open, setOpen] = useState(false);
 
   const handleSubmit = (mealName) => {
+    // if (mealName.trim() === '') return;
+
     console.log('Ny ret:', mealName);
     setOpen(false); // Luk dialogen, når måltidet er gemt
   };
@@ -34,7 +36,7 @@ export default function AddMealDialog() {
                   </div>
                 </div>
               </div>
-              <div className="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+              {/* <div className="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
                 <button
                   type="button"
                   onClick={() => setOpen(false)}
@@ -42,7 +44,7 @@ export default function AddMealDialog() {
                 >
                   Cancel
                 </button>
-              </div>
+              </div> */}
             </DialogPanel>
           </div>
         </div>
