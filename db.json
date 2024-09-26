@@ -1,0 +1,173 @@
+{
+    "meals": [
+      {
+        "name": "Spaghetti Bolognese",
+        "ingredients": {
+          "frost": [],
+          "grønt": [
+            { "item": "Løg", "amount": 150, "unit": "g" },
+            { "item": "Gulerødder", "amount": 200, "unit": "g" },
+            { "item": "Hvidløg", "amount": 10, "unit": "g" }
+          ],
+          "protein": [
+            { "item": "Oksekød (hakket)", "amount": 500, "unit": "g" }
+          ],
+          "mejeri": [
+            { "item": "Parmesan", "amount": 50, "unit": "g" }
+          ],
+          "kulhydrater": [
+            { "item": "Spaghetti", "amount": 400, "unit": "g" }
+          ],
+          "krydderi": [
+            { "item": "Salt", "amount": 5, "unit": "g" },
+            { "item": "Peber", "amount": 2, "unit": "g" },
+            { "item": "Basilikum", "amount": 5, "unit": "g" }
+          ],
+          "øvrige": [
+            { "item": "Tomatsauce", "amount": 500, "unit": "mL" },
+            { "item": "Olivenolie", "amount": 20, "unit": "mL" }
+          ]
+        }
+      },
+      {
+        "name": "Kylling i karry",
+        "ingredients": {
+          "frost": [],
+          "grønt": [
+            { "item": "Løg", "amount": 150, "unit": "g" },
+            { "item": "Peberfrugt", "amount": 200, "unit": "g" },
+            { "item": "Æble", "amount": 150, "unit": "g" }
+          ],
+          "protein": [
+            { "item": "Kyllingebryst", "amount": 400, "unit": "g" }
+          ],
+          "mejeri": [
+            { "item": "Fløde", "amount": 250, "unit": "mL" }
+          ],
+          "kulhydrater": [
+            { "item": "Ris", "amount": 300, "unit": "g" }
+          ],
+          "krydderi": [
+            { "item": "Karry", "amount": 10, "unit": "g" },
+            { "item": "Salt", "amount": 5, "unit": "g" },
+            { "item": "Peber", "amount": 2, "unit": "g" }
+          ],
+          "øvrige": [
+            { "item": "Olivenolie", "amount": 20, "unit": "mL" }
+          ]
+        }
+      },
+      {
+        "name": "Lasagne",
+        "ingredients": {
+          "frost": [],
+          "grønt": [
+            { "item": "Løg", "amount": 150, "unit": "g" },
+            { "item": "Gulerødder", "amount": 200, "unit": "g" },
+            { "item": "Hvidløg", "amount": 10, "unit": "g" }
+          ],
+          "protein": [
+            { "item": "Oksekød (hakket)", "amount": 500, "unit": "g" }
+          ],
+          "mejeri": [
+            { "item": "Mælk", "amount": 500, "unit": "mL" },
+            { "item": "Ost", "amount": 100, "unit": "g" },
+            { "item": "Smør", "amount": 50, "unit": "g" }
+          ],
+          "kulhydrater": [
+            { "item": "Lasagneplader", "amount": 250, "unit": "g" }
+          ],
+          "krydderi": [
+            { "item": "Salt", "amount": 5, "unit": "g" },
+            { "item": "Peber", "amount": 2, "unit": "g" },
+            { "item": "Muskatnød", "amount": 1, "unit": "g" }
+          ],
+          "øvrige": [
+            { "item": "Tomatsauce", "amount": 500, "unit": "mL" },
+            { "item": "Mel", "amount": 50, "unit": "g" },
+            { "item": "Olivenolie", "amount": 20, "unit": "mL" }
+          ]
+        }
+      },
+      {
+        "name": "Laks med grøntsager",
+        "ingredients": {
+          "frost": [
+            { "item": "Laks (frossen)", "amount": 400, "unit": "g" }
+          ],
+          "grønt": [
+            { "item": "Broccoli", "amount": 200, "unit": "g" },
+            { "item": "Gulerødder", "amount": 150, "unit": "g" },
+            { "item": "Kartofler", "amount": 300, "unit": "g" }
+          ],
+          "protein": [
+            { "item": "Laks", "amount": 400, "unit": "g" }
+          ],
+          "mejeri": [
+            { "item": "Smør", "amount": 50, "unit": "g" }
+          ],
+          "kulhydrater": [],
+          "krydderi": [
+            { "item": "Salt", "amount": 5, "unit": "g" },
+            { "item": "Peber", "amount": 2, "unit": "g" },
+            { "item": "Citron", "amount": 1, "unit": "g" }
+          ],
+          "øvrige": []
+        }
+      },
+      {
+        "name": "Grøntsagswok med tofu",
+        "ingredients": {
+          "frost": [],
+          "grønt": [
+            { "item": "Broccoli", "amount": 200, "unit": "g" },
+            { "item": "Gulerødder", "amount": 150, "unit": "g" },
+            { "item": "Peberfrugt", "amount": 200, "unit": "g" },
+            { "item": "Løg", "amount": 150, "unit": "g" }
+          ],
+          "protein": [
+            { "item": "Tofu", "amount": 300, "unit": "g" }
+          ],
+          "mejeri": [],
+          "kulhydrater": [
+            { "item": "Nudler", "amount": 200, "unit": "g" }
+          ],
+          "krydderi": [
+            { "item": "Sojasauce", "amount": 50, "unit": "mL" },
+            { "item": "Ingefær", "amount": 10, "unit": "g" },
+            { "item": "Hvidløg", "amount": 10, "unit": "g" },
+            { "item": "Salt", "amount": 5, "unit": "g" },
+            { "item": "Peber", "amount": 2, "unit": "g" }
+          ],
+          "øvrige": [
+            { "item": "Sesamolie", "amount": 20, "unit": "mL" }
+          ]
+        }
+      },
+      {
+        "name": "Æggekage med bacon",
+        "ingredients": {
+          "frost": [],
+          "grønt": [
+            { "item": "Tomater", "amount": 150, "unit": "g" },
+            { "item": "Forårsløg", "amount": 100, "unit": "g" }
+          ],
+          "protein": [
+            { "item": "Æg", "amount": 6, "unit": "stk" },
+            { "item": "Bacon", "amount": 150, "unit": "g" }
+          ],
+          "mejeri": [
+            { "item": "Mælk", "amount": 100, "unit": "mL" },
+            { "item": "Smør", "amount": 20, "unit": "g" }
+          ],
+          "kulhydrater": [],
+          "krydderi": [
+            { "item": "Salt", "amount": 5, "unit": "g" },
+            { "item": "Peber", "amount": 2, "unit": "g" }
+          ],
+          "øvrige": []
+        }
+      }
+    ]
+  }
+  

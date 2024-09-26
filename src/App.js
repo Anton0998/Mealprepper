@@ -8,14 +8,29 @@ export default function App() {
       <h1 className="text-5xl font-bold text-center py-10">
         Mealprepper
       </h1>
-      <div className='flex flex-col grow'>
-        <div className='flex'>
-          <AddMealDialog />
-        </div>
-        <div className='grow my-4 overflow-y-scroll border border-gray-200 rounded-lg'>
-          <MealList /> 
-        </div>
-      </div>
+      <main className='flex justify-between gap-2 my-4 grow'>
+        <section className='flex flex-col gap-2 w-1/2'>
+          <div className='flex'>
+            <AddMealDialog />
+          </div>
+          <div className='grow overflow-y-scroll border border-gray-200 rounded-lg'>
+            <MealList /> 
+          </div>
+        </section>
+        <section className='flex flex-col gap-2 w-1/2'>
+          <div className='ms-auto' >
+            <button className='px-4 py-2 bg-blue-500 text-white rounded'>
+              knap
+            </button>
+          </div>
+          <div className='grow overflow-y-scroll border border-gray-200 rounded-lg'>
+            <ul>
+              
+            </ul>
+          </div>
+        </section>
+      </main>
+      
       
     </div>
   )
