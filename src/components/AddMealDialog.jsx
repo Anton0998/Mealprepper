@@ -1,15 +1,26 @@
 import { useState } from 'react';
 import { Dialog, DialogBackdrop, DialogPanel, DialogTitle } from '@headlessui/react';
 import AddMealForm from './AddMealForm';
+// import axios from 'axios';
+import { addMeal, fetchMeals } from '../api';
 
-export default function AddMealDialog() {
+
+export default function AddMealDialog({ setMeals }) {
   const [open, setOpen] = useState(false);
 
-  const handleSubmit = (mealName) => {
-    // if (mealName.trim() === '') return;
+  const handleSubmit = async (mealData) => {
+    const { name, ingredients } = mealData;
 
-    console.log('Ny ret:', mealName);
-    setOpen(false); // Luk dialogen, når måltidet er gemt
+    try {
+      const response = await addMeal(name, ingredients); // Vent på tilføjelsen
+      console.log('Meal added successfully:', response.data);
+      setOpen(false); // Luk dialogen
+
+      // const updatedMeals = await fetchMeals(); // Vent på at hente de opdaterede måltider
+      // setMeals(updatedMeals); // Opdater state med de nye måltider
+    } catch (error) {
+      console.error('There was an error adding the meal:', error.response?.data || error.message);
+    }
   };
 
   return (

@@ -1,19 +1,30 @@
 // src/api.js
 import axios from 'axios';
 
-const API_URL = 'http://localhost:3001/meals'; // JSON-serverens endpoint
+export const API_URL = 'http://localhost:3001/meals'; // JSON-serverens endpoint
 
 // Funktion til at hente alle måltider
 export const fetchMeals = async () => {
-    const response = await axios.get(API_URL);
-    return response.data;
+    try {
+        const response = await axios.get(API_URL);
+        // Sørg for at returnere arrayet af måltider
+        return response.data; // antager at response.data er et array
+    } catch (error) {
+        console.error('Error fetching meals:', error);
+        return []; // returner et tomt array i tilfælde af fejl
+    }
 };
 
 // Funktion til at tilføje et nyt måltid
-export const addMeal = async (newMeal) => {
-    const response = await axios.post(API_URL, newMeal);
-    return response.data;
-};
+export const addMeal = async (mealName, ingredients) => {
+    const newMeal = {
+      name: mealName,
+      ingredients,
+    };
+  
+    // Sender POST-anmodning til JSON-serveren
+    return await axios.post(API_URL, newMeal);
+  };
 
 // Funktion til at opdatere et måltid
 export const updateMeal = async (id, updatedMeal) => {
