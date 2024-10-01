@@ -18,27 +18,32 @@ export const fetchMeals = async () => {
 };
 
 // Funktion til at tilføje et nyt måltid
+// src/api.js
 export const addMeal = async (mealName, ingredients) => {
     const newMeal = {
-        id: uuidv4(), // Generer et unikt ID
+        id: uuidv4(),
         name: mealName,
         ingredients,
     };
-  
-    // Sender POST-anmodning til JSON-serveren
-    return await axios.post(API_URL, newMeal);
-  };
+
+    const response = await axios.post(API_URL, newMeal);
+    console.log('Added meal:', response.data); // Log det tilføjede måltid
+    return response.data; // Returnér det tilføjede måltid
+};
+
 
 // Funktion til at opdatere et måltid
+// src/api.js
 export const updateMeal = async (id, updatedMeal) => {
     try {
         const response = await axios.put(`${API_URL}/${id}`, updatedMeal);
-        return response.data;
-    }
-    catch(error) {
+        return response.data; // Sørg for, at dette er det opdaterede måltid
+    } catch (error) {
+        console.error('Error updating meal:', error);
         throw new Error('Error updating meal', error);
     }
 };
+
 
 
 // Funktion til at slette et måltid

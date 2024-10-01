@@ -5,23 +5,7 @@
       "id": "e9331b8a-7ade-4de6-8819-c64dbcae787a",
       "ingredients": {
         "frost": [],
-        "grønt": [
-          {
-            "item": "Løg",
-            "amount": 150,
-            "unit": "g"
-          },
-          {
-            "item": "Gulerødder",
-            "amount": 200,
-            "unit": "g"
-          },
-          {
-            "item": "Hvidløg",
-            "amount": 10,
-            "unit": "g"
-          }
-        ],
+        "grønt": [],
         "protein": [
           {
             "item": "Oksekød (hakket)",
@@ -292,6 +276,53 @@
             "unit": "g"
           }
         ],
+        "øvrige": []
+      }
+    },
+    {
+      "name": "Stegte ris",
+      "ingredients": {
+        "frost": [],
+        "grønt": [
+          {
+            "item": "gulerødder",
+            "amount": 200,
+            "unit": "g",
+            "id": "4df97788-c91d-4ca3-890d-10423b0bdf33"
+          }
+        ],
+        "protein": [
+          {
+            "item": "hakket kylling",
+            "amount": 1000,
+            "unit": "g",
+            "id": "7eaae1b4-fa27-4149-b2e8-3de140e427ed"
+          }
+        ],
+        "mejeri": [],
+        "kulhydrater": [],
+        "krydderi": [],
+        "øvrige": []
+      },
+      "id": "97a50cb8-b69c-4863-8d2f-7de4b8c87a2e"
+    },
+    {
+      "id": "be4dc343-84b4-47a3-bf79-519540ab8607",
+      "name": "Grøn karry",
+      "ingredients": {
+        "frost": [
+          {
+            "item": "wok mix",
+            "amount": 1,
+            "unit": "stk",
+            "id": "85137978-4b6f-40f0-bb10-7e2cfcfc63dd"
+          }
+        ],
+        "grønt": [],
+        "protein": [],
+        "mejeri": [],
+        "kulhydrater": [],
+        "krydderi": [],
         "øvrige": []
       }
     }

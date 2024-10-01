@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Dialog, DialogBackdrop, DialogPanel, DialogTitle } from '@headlessui/react';
 import AddMealForm from './AddMealForm';
 // import axios from 'axios';
-import { addMeal, fetchMeals } from '../api';
+import { addMeal } from '../api';
 
 
 export default function AddMealDialog({ setMeals }) {

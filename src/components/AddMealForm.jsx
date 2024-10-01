@@ -1,8 +1,8 @@
-import { useState } from 'react';
-import { deleteMeal } from '../api';
+import { useState, useEffect } from 'react';
+// import { deleteMeal } from '../api';
 import { v4 as uuidv4 } from 'uuid'; 
 
-export default function AddMealForm({ onSubmit }) {
+export default function AddMealForm({ onSubmit, initialMealData }) {
   const [mealName, setMealName] = useState('');
   const [ingredients, setIngredients] = useState({
     frost: [],
@@ -20,6 +20,15 @@ export default function AddMealForm({ onSubmit }) {
     amount: '',
     unit: 'g', // Default unit
   });
+
+// src/components/AddMealForm.jsx
+  useEffect(() => {
+    if (initialMealData) {
+        setMealName(initialMealData.name || ''); // Giv en standardværdi, hvis `name` ikke findes
+        setIngredients(initialMealData.ingredients || {}); // Giv en standardværdi, hvis `ingredients` ikke findes
+    }
+  }, [initialMealData]);
+
 
   const handleIngredientChange = (field, value) => {
     setCurrentIngredient(prev => ({ ...prev, [field]: value }));
@@ -47,22 +56,29 @@ export default function AddMealForm({ onSubmit }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!mealName || Object.keys(ingredients).length === 0) {
+        alert('Please fill in all fields');
+        return; // Stop hvis ikke alle felter er udfyldt
+    }
+
     onSubmit({
-      name: mealName,
-      ingredients,
+        name: mealName,
+        ingredients,
     });
+
     // Clear inputs after submit (optional)
     setMealName('');
     setIngredients({
-      frost: [],
-      grønt: [],
-      protein: [],
-      mejeri: [],
-      kulhydrater: [],
-      krydderi: [],
-      øvrige: [],
+        frost: [],
+        grønt: [],
+        protein: [],
+        mejeri: [],
+        kulhydrater: [],
+        krydderi: [],
+        øvrige: [],
     });
-  };
+};
+
 
   // const handleDeleteIngredient = ({index}) => {
   //   const removeIngredient = ingredients.pop(index)
