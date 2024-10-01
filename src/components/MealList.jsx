@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { fetchMeals } from '../api';
+import DeleteMeal from './DeleteMeal';
 
 export default function MealList() {
     const [meals, setMeals] = useState([]);
@@ -14,6 +15,11 @@ export default function MealList() {
         getMeals();
     }, [])
 
+    const handleDelete = (deletedMealId) => {
+        // Opdatér meals-listen, når et måltid bliver slettet
+        setMeals(meals.filter((meal) => meal.id !== deletedMealId));
+    };
+
     return (
         <>
             <ul role='list' className="divide-y divide-gray-100">
@@ -22,8 +28,9 @@ export default function MealList() {
                         // Kontrolér, at meal.name er en streng
                         const mealName = typeof meal.name === 'string' ? meal.name : 'Unnamed Meal';
                         return (
-                            <li key={meal.id} className='p-2'>
+                            <li key={meal.id} className='p-2 flex'>
                                 <p>{mealName}</p>
+                                <DeleteMeal mealId={meal.id} onDelete={handleDelete} /> 
                             </li>
                         );
                     })

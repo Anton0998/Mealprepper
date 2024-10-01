@@ -1,5 +1,7 @@
 // src/api.js
 import axios from 'axios';
+import { v4 as uuidv4 } from 'uuid'; // Importer uuid for at generere unikke ID'er
+
 
 export const API_URL = 'http://localhost:3001/meals'; // JSON-serverens endpoint
 
@@ -18,8 +20,9 @@ export const fetchMeals = async () => {
 // Funktion til at tilføje et nyt måltid
 export const addMeal = async (mealName, ingredients) => {
     const newMeal = {
-      name: mealName,
-      ingredients,
+        id: uuidv4(), // Generer et unikt ID
+        name: mealName,
+        ingredients,
     };
   
     // Sender POST-anmodning til JSON-serveren
@@ -28,11 +31,22 @@ export const addMeal = async (mealName, ingredients) => {
 
 // Funktion til at opdatere et måltid
 export const updateMeal = async (id, updatedMeal) => {
-    const response = await axios.put(`${API_URL}/${id}`, updatedMeal);
-    return response.data;
+    try {
+        const response = await axios.put(`${API_URL}/${id}`, updatedMeal);
+        return response.data;
+    }
+    catch(error) {
+        throw new Error('Error updating meal', error);
+    }
 };
 
+
 // Funktion til at slette et måltid
-export const deleteMeal = async (id) => {
-    await axios.delete(`${API_URL}/${id}`);
+export const deleteMeal = async (mealId) => {
+    try {
+        const response = await axios.delete(`${API_URL}/${mealId}`);
+        return response;
+    } catch (error) {
+        throw new Error('Error deleting meal:', error);
+    }
 };
