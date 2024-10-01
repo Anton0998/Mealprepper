@@ -25,7 +25,7 @@ export default function App() {
           </div>
           <div className='grow overflow-y-scroll border border-gray-200 rounded-lg'>
             <ul>
-              
+              {/* Genereret indkøbsliste her: */}
             </ul>
           </div>
         </section>

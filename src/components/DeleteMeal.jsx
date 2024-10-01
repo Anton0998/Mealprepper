@@ -1,3 +1,5 @@
+// src/components/DeleteMeal.jsx
+
 import { useState } from 'react'
 import { deleteMeal } from '../api';
 import { Dialog, DialogBackdrop, DialogPanel, DialogTitle } from '@headlessui/react'

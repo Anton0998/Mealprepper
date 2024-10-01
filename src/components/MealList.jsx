@@ -1,4 +1,4 @@
-// MealList.jsx
+// src/components/MealList.jsx
 import { useState, useEffect } from 'react';
 import { fetchMeals } from '../api';
 import DeleteMeal from './DeleteMeal';

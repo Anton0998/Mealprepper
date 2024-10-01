@@ -1,3 +1,5 @@
+// src/components/AddMealDialog.jsx
+
 import { useState } from 'react';
 import { Dialog, DialogBackdrop, DialogPanel, DialogTitle } from '@headlessui/react';
 import AddMealForm from './AddMealForm';
