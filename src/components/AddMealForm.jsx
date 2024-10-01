@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { deleteMeal } from '../api';
+import { v4 as uuidv4 } from 'uuid'; 
 
 export default function AddMealForm({ onSubmit }) {
   const [mealName, setMealName] = useState('');
@@ -29,11 +31,19 @@ export default function AddMealForm({ onSubmit }) {
     if (item && amount) {
       setIngredients(prev => ({
         ...prev,
-        [category]: [...prev[category], { item, amount: parseFloat(amount), unit }],
+        [category]: [...prev[category], { item, amount: parseFloat(amount), unit, id: uuidv4(),}],
       }));
       setCurrentIngredient({ category, item: '', amount: '', unit: 'g' }); // Clear current input
     }
   };
+
+  const handleDeleteIngredient = (category, id) => {
+    setIngredients((prev) => ({
+      ...prev,
+      [category]: prev[category].filter(ingredient => ingredient.id !== id)
+    }))
+
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -53,6 +63,15 @@ export default function AddMealForm({ onSubmit }) {
       øvrige: [],
     });
   };
+
+  // const handleDeleteIngredient = ({index}) => {
+  //   const removeIngredient = ingredients.pop(index)
+
+  //   setIngredients((prev) => (
+  //     ...prev,
+  //     []
+  //   ))
+  // }
 
   return (
     <form onSubmit={handleSubmit} className="mx-auto mt-10">
@@ -125,11 +144,14 @@ export default function AddMealForm({ onSubmit }) {
             <div key={category}>
                 <p className="text-sm text-gray-600 font-semibold capitalize">{category}</p>
                 {items.length > 0 ? 
-                    ( <ul className='pb-4'>
+                    ( <ul className='pb-4 divide-y divide-gray-100'>
                         {items.map((ingredient, index) => (
-                        <li key={index} className="flex justify-between ps-4 text-gray-500 text-sm">
+                        <li key={index}  className="py-1 flex justify-between ps-4 text-gray-500 text-sm items-center">
+                          <div>
                             <p>{ingredient.item}</p>
-                            <p>{`${ingredient.amount} ${ingredient.unit}`}</p>
+                            <p className='text-gray-400'>{`${ingredient.amount} ${ingredient.unit}`}</p>
+                          </div>
+                          <button onClick={() => handleDeleteIngredient(category, ingredient.id)} >X</button>
                         </li>
                         ))}
                     </ul> )
