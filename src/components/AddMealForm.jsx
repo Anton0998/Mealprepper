@@ -146,7 +146,7 @@ export default function AddMealForm({ onSubmit }) {
                 {items.length > 0 ? 
                     ( <ul className='pb-4 divide-y divide-gray-100'>
                         {items.map((ingredient, index) => (
-                        <li key={index}  className="py-1 flex justify-between ps-4 text-gray-500 text-sm items-center">
+                        <li key={ingredient.id}  className="py-1 flex justify-between ps-4 text-gray-500 text-sm items-center">
                           <div>
                             <p>{ingredient.item}</p>
                             <p className='text-gray-400'>{`${ingredient.amount} ${ingredient.unit}`}</p>
