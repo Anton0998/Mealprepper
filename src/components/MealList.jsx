@@ -2,12 +2,14 @@
 import { useState, useEffect } from 'react';
 import { fetchMeals } from '../api';
 import DeleteMeal from './DeleteMeal';
-import EditMealDialog from './EditMealDialog'; // Import the new EditMealDialog
+import EditMealDialog from './EditMealDialog'; 
+import SelectedMealsList from './SelectedMealList';
 
 export default function MealList() {
     const [meals, setMeals] = useState([]);
     const [selectedMeal, setSelectedMeal] = useState(null); // To keep track of the meal to edit
     const [isEditing, setIsEditing] = useState(false); // To control the dialog
+    const [selectedMeals, setSelectedMeals] = useState([]);
 
     useEffect(() => {
         const getMeals = async () => {
@@ -28,15 +30,30 @@ export default function MealList() {
         setIsEditing(true); // Open the edit dialog
     };
 
+    const handleSelectMeal = (mealId) => {
+        setSelectedMeals((prevSelected) => {
+            if (prevSelected.includes(mealId)) {
+                return prevSelected.filter(id => id !== mealId) //remove selected
+            } else {
+                return [...prevSelected, mealId]; // add selected
+            }
+        })
+    }
+
     return (
-        <>
-            <ul role='list' className="divide-y divide-gray-100">
+        <div className='flex gap-8 justify-between'>
+            <ul role='list' className="w-2/3 divide-y divide-gray-100 border border-gray-200 rounded-lg">
                 {Array.isArray(meals) && meals.length > 0 ? (
                     meals.map((meal) => {
-                        console.log('Meal item:', meal); // Debugging - log each meal item
                         const mealName = meal && typeof meal.name === 'string' ? meal.name : 'Unnamed Meal';
                         return (
-                            <li key={meal.id} className='p-2 flex'>
+                            <li key={meal.id} className='p-3 flex items-center'>
+                                <input 
+                                    className='me-2 cursor-pointer'
+                                    type='checkbox' 
+                                    checked={selectedMeals.includes(meal.id)} 
+                                    onChange={() => handleSelectMeal(meal.id)} // Add the checkbox
+                                />
                                 <p>{mealName}</p>
                                 <div className='flex ms-auto gap-2'>
                                     <button 
@@ -61,6 +78,13 @@ export default function MealList() {
                     setMeals={setMeals} // Pass the function to update meals
                 />
             )}
-        </>
+            <div className='w-1/3'>
+                {/* Inkluder det nye komponent til valgte retter */}
+                <SelectedMealsList 
+                    selectedMeals={selectedMeals}
+                    meals={meals}
+                />
+            </div>
+        </div>
     );
 }
