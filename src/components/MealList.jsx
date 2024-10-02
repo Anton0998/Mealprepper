@@ -26,8 +26,8 @@ export default function MealList() {
     };
 
     const handleEdit = (meal) => {
-        setSelectedMeal(meal); // Set the meal to be edited
-        setIsEditing(true); // Open the edit dialog
+        setSelectedMeal(meal); 
+        setIsEditing(true); 
     };
 
     const handleSelectMeal = (mealId) => {
@@ -52,12 +52,12 @@ export default function MealList() {
                                     className='me-2 cursor-pointer'
                                     type='checkbox' 
                                     checked={selectedMeals.includes(meal.id)} 
-                                    onChange={() => handleSelectMeal(meal.id)} // Add the checkbox
+                                    onChange={() => handleSelectMeal(meal.id)} 
                                 />
                                 <p>{mealName}</p>
                                 <div className='flex ms-auto gap-2'>
                                     <button 
-                                        onClick={() => handleEdit(meal)} // Add the edit button
+                                        onClick={() => handleEdit(meal)} 
                                         className="px-1 px-2 text-sm text-gray-500 border border-gray-500 rounded">
                                         Rediger
                                     </button>
