@@ -280,49 +280,211 @@
       }
     },
     {
-      "name": "Stegte ris",
+      "name": "Kylling Fajitas",
+      "id": "c1e2b5a1-7f87-4df9-8e5b-6e6e5e9180c1",
       "ingredients": {
         "frost": [],
         "grønt": [
           {
-            "item": "gulerødder",
-            "amount": 200,
-            "unit": "g",
-            "id": "4df97788-c91d-4ca3-890d-10423b0bdf33"
+            "item": "Paprika",
+            "amount": 2,
+            "unit": ""
+          },
+          {
+            "item": "Løg",
+            "amount": 1,
+            "unit": ""
+          },
+          {
+            "item": "Salat",
+            "amount": 100,
+            "unit": "g"
           }
         ],
         "protein": [
           {
-            "item": "hakket kylling",
-            "amount": 1000,
-            "unit": "g",
-            "id": "7eaae1b4-fa27-4149-b2e8-3de140e427ed"
+            "item": "Kyllingefilet",
+            "amount": 500,
+            "unit": "g"
           }
         ],
-        "mejeri": [],
-        "kulhydrater": [],
-        "krydderi": [],
+        "mejeri": [
+          {
+            "item": "Ost",
+            "amount": 100,
+            "unit": "g"
+          }
+        ],
+        "kulhydrater": [
+          {
+            "item": "Tortilla",
+            "amount": 4,
+            "unit": ""
+          }
+        ],
+        "krydderi": [
+          {
+            "item": "Krydderi mix",
+            "amount": 2,
+            "unit": "spsk"
+          }
+        ],
         "øvrige": []
-      },
-      "id": "97a50cb8-b69c-4863-8d2f-7de4b8c87a2e"
+      }
     },
     {
-      "id": "be4dc343-84b4-47a3-bf79-519540ab8607",
-      "name": "Grøn karry",
+      "name": "Vegetarisk Chili",
+      "id": "b82c44e3-2c18-485c-9960-5dff89b92ff1",
       "ingredients": {
-        "frost": [
+        "frost": [],
+        "grønt": [
           {
-            "item": "wok mix",
+            "item": "Løg",
             "amount": 1,
-            "unit": "stk",
-            "id": "85137978-4b6f-40f0-bb10-7e2cfcfc63dd"
+            "unit": ""
+          },
+          {
+            "item": "Hvidløg",
+            "amount": 2,
+            "unit": "fed"
+          },
+          {
+            "item": "Peberfrugt",
+            "amount": 1,
+            "unit": ""
+          },
+          {
+            "item": "Gulerod",
+            "amount": 2,
+            "unit": ""
           }
         ],
+        "protein": [
+          {
+            "item": "Kidneybønner",
+            "amount": 400,
+            "unit": "g"
+          },
+          {
+            "item": "Chickpeas",
+            "amount": 400,
+            "unit": "g"
+          }
+        ],
+        "mejeri": [],
+        "kulhydrater": [
+          {
+            "item": "Ris",
+            "amount": 200,
+            "unit": "g"
+          }
+        ],
+        "krydderi": [
+          {
+            "item": "Chilipulver",
+            "amount": 1,
+            "unit": "spsk"
+          },
+          {
+            "item": "Spidskommen",
+            "amount": 1,
+            "unit": "spsk"
+          }
+        ],
+        "øvrige": [
+          {
+            "item": "Tomater (dåse)",
+            "amount": 400,
+            "unit": "g"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Laks med Asparges",
+      "id": "e8c5b4ab-9f23-497e-899f-478c6e0c1d60",
+      "ingredients": {
+        "frost": [],
+        "grønt": [
+          {
+            "item": "Asparges",
+            "amount": 200,
+            "unit": "g"
+          },
+          {
+            "item": "Citron",
+            "amount": 1,
+            "unit": ""
+          }
+        ],
+        "protein": [
+          {
+            "item": "Laks",
+            "amount": 400,
+            "unit": "g"
+          }
+        ],
+        "mejeri": [
+          {
+            "item": "Smør",
+            "amount": 50,
+            "unit": "g"
+          }
+        ],
+        "kulhydrater": [],
+        "krydderi": [
+          {
+            "item": "Salt",
+            "amount": 1,
+            "unit": "tsk"
+          },
+          {
+            "item": "Peber",
+            "amount": 1,
+            "unit": "tsk"
+          }
+        ],
+        "øvrige": []
+      }
+    },
+    {
+      "name": "Bananpandekager",
+      "id": "d6795c2a-9f24-49b1-8c45-8334b0f43d69",
+      "ingredients": {
+        "frost": [],
         "grønt": [],
         "protein": [],
-        "mejeri": [],
-        "kulhydrater": [],
-        "krydderi": [],
+        "mejeri": [
+          {
+            "item": "Mælk",
+            "amount": 200,
+            "unit": "mL"
+          },
+          {
+            "item": "Æg",
+            "amount": 2,
+            "unit": ""
+          }
+        ],
+        "kulhydrater": [
+          {
+            "item": "Havregryn",
+            "amount": 150,
+            "unit": "g"
+          },
+          {
+            "item": "Bananer",
+            "amount": 2,
+            "unit": ""
+          }
+        ],
+        "krydderi": [
+          {
+            "item": "Kanel",
+            "amount": 1,
+            "unit": "tsk"
+          }
+        ],
         "øvrige": []
       }
     }

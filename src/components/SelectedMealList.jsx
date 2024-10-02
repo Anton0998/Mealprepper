@@ -1,8 +1,7 @@
 import React from 'react';
-import { saveAs } from 'file-saver';
 
 const SelectedMealsList = ({ selectedMeals, meals }) => {
-    const handleExportCSV = () => {
+    const handleCopy = () => {
         const ingredientMap = {};
 
         // Funktion til at samle ingredienser fra en kategorigruppe
@@ -33,15 +32,20 @@ const SelectedMealsList = ({ selectedMeals, meals }) => {
             }
         });
 
-        // Opret CSV-indhold
-        let csvContent = 'Ingrediens,Mængde,Enhed\n'; // CSV-header
+        // Byg tekst til udklipsholderen
+        let copyText = 'Indkøbsliste:\n\n';
         Object.entries(ingredientMap).forEach(([ingredient, { amount, unit }]) => {
-            csvContent += `${ingredient},${amount},${unit}\n`;
+            copyText += `${ingredient}: ${amount} ${unit}\n`;
         });
 
-        // Konverter til en Blob og download som en CSV-fil
-        const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
-        saveAs(blob, 'indkøbsliste.csv');
+        // Kopier teksten til udklipsholderen
+        navigator.clipboard.writeText(copyText)
+            .then(() => {
+                alert('Indkøbsliste kopieret til udklipsholderen!');
+            })
+            .catch(err => {
+                console.error('Fejl ved kopiering:', err);
+            });
     };
 
     return (
@@ -52,10 +56,10 @@ const SelectedMealsList = ({ selectedMeals, meals }) => {
             ) : (
                 <>
                     <button
-                        onClick={handleExportCSV}
+                        onClick={handleCopy}
                         className="my-2 px-2 py-1 text-sm border rounded bg-gray-100"
                     >
-                        Eksporter Indkøbsliste som CSV
+                        Kopiér Indkøbsliste
                     </button>
                     <ul className="mt-3 divide-y divide-gray-200">
                         {meals
